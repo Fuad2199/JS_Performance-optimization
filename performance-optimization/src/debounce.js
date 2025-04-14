@@ -21,3 +21,4 @@ const dSearch = debounce(search, 100);
 dSearch('Hello');
 dSearch('Hello, ');
 dSearch('Hello, World!');  // Only this call will trigger after 100ms
+
