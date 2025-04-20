@@ -13,7 +13,8 @@ class algo {
     }
 
     mark() {
-        this.objects.forEach(ovj => {
+        this.objects.forEach(obj => {
+            obj.marked = false;
             if (obj.refCount > 0) {
                 obj.marked = true;
             }
@@ -28,17 +29,21 @@ class algo {
         this.mark();
         this.sweep();
     }
+
     prints() {
-        return this.objects
+        return this.objects;
     }
 }
+
+
 const gc = new algo();
 
 const obj1 = gc.createObject("Object1");
-const obj12 = gc.createObject("Object2");
+const obj2 = gc.createObject("Object2");
 
-obj12.refCount = 0;
+obj2.refCount = 0;
 
 gc.collectGarbage();
+
 console.log(gc.prints());
 
